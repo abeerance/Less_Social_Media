@@ -1,5 +1,13 @@
-import React from "react";
+import React, {Fragment} from "react";
+import classes from './Search.module.css'
 
-const Search = (props) => {};
+const Search = (props) => {
+    return (
+        <div className={classes.input}>
+            <label></label>
+            <input type="text" />
+        </div>
+    )
+};
 
 export default Search;

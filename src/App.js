@@ -1,14 +1,13 @@
-import React, {
-    Component
-} from 'react'
-import ReactDOM from 'react-dom'
-import Style from './style.css'
-class App extends Component {
-    render() {
-        return (
-            
-            console.log('Here goes the JSX')
-        )
-    }
+import React, { Fragment } from "react";
+
+import Header from "./components/Layout/Header";
+
+function App() {
+    return (
+        <Fragment>
+            <Header />
+        </Fragment>
+    );
 }
+
 export default App;
