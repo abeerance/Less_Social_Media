@@ -14,8 +14,12 @@
     z-index: 10;
 }
 
-.nav ul{
+nav ul{
     width: 50%;
     display: flex;
     list-style-type: none;
+}
+
+nav ul li {
+    margin-right: 1rem;
 }

@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
-
-import Header from "./components/Layout/Header";
+import React from 'react';
+import AuthContextProvider from './contexts/AuthContext';
+import Home from './components/Home'
 
 function App() {
     return (
-        <Fragment>
-            <Header />
-        </Fragment>
+        <AuthContextProvider>
+            <Home />
+        </AuthContextProvider>
     );
 }
 
