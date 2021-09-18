@@ -22,11 +22,11 @@ $conn = $db_connection->dbConnection();
 $data = json_decode(file_get_contents("php://input"));
 $returnData = [];
 
-// IF REQUEST METHOD IS NOT EQUAL TO POST
+// check if request method is POST
 if($_SERVER["REQUEST_METHOD"] != "POST"):
     $returnData = msg(0,404,'Page Not Found!');
 
-// CHECKING EMPTY FIELDS
+// check empty fields
 elseif(!isset($data->username) 
     || !isset($data->password)
     || empty(trim($data->username))
@@ -36,20 +36,20 @@ elseif(!isset($data->username)
     $fields = ['fields' => ['username','password']];
     $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
 
-// IF THERE ARE NO EMPTY FIELDS THEN-
+// if no empty fields
 else:
     $username = trim($data->username);
     $password = trim($data->password);
 
-    // CHECKING THE USERNAME 
+    // check username length
     if(strlen($username) < 3):
         $returnData = msg(0,422,'Your username must be at least 3 characters long!');
     
-    // IF PASSWORD IS LESS THAN 8 THE SHOW THE ERROR
+    // check password length
     elseif(strlen($password) < 8):
         $returnData = msg(0,422,'Your password must be at least 8 characters long!');
 
-    // THE USER IS ABLE TO PERFORM THE LOGIN ACTION
+    // beginning login procedure
     else:
         try{
             
@@ -58,13 +58,12 @@ else:
             $query_stmt->bindValue(':username', $username,PDO::PARAM_STR);
             $query_stmt->execute();
 
-            // IF THE USER IS FOUND BY USERNAME
+            // check if username exists
             if($query_stmt->rowCount()):
                 $row = $query_stmt->fetch(PDO::FETCH_ASSOC);
                 $check_password = password_verify($password, $row['password']);
 
-                // VERIFYING THE PASSWORD (IS CORRECT OR NOT?)
-                // IF PASSWORD IS CORRECT THEN SEND THE LOGIN TOKEN
+                // check if password is correct and generate login token
                 if($check_password):
 
                     $jwt = new JwtHandler();
@@ -79,12 +78,12 @@ else:
                         'token' => $token
                     ];
 
-                // IF INVALID PASSWORD
+                // invalid password msg
                 else:
                     $returnData = msg(0,422,'Invalid Password!');
                 endif;
 
-            // IF THE USER IS NOT FOUNDED BY USERNAME THEN SHOW THE FOLLOWING ERROR
+            // invalid username msg
             else:
                 $returnData = msg(0,422,'Invalid username!');
             endif;

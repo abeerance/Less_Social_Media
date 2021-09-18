@@ -37,6 +37,8 @@ class AuthContextProvider extends Component {
             ...this.state,
             isauth: false,
         });
+        // refresh page due logout
+        window.location.reload(false);
     };
 
     // registerUser
