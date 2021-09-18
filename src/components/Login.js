@@ -1,85 +1,75 @@
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import React, {useContext, useState} from 'react'
+import { AuthContext } from '../contexts/AuthContext';
 
-const login = () => {
-    const { toggleNav, loginUser, isLoggedIn } = useContext(AuthContext);
+function Login(){
+
+    const {toggleNav,loginUser,isLoggedIn} = useContext(AuthContext);
 
     const initialState = {
-        userInfo: {
-            email: "",
-            password: "",
+        userInfo:{
+            username:'',
+            password:'',
         },
-        errorMsg: "",
-        successMsg: "",
-    };
+        errorMsg:'',
+        successMsg:'',
+    }
 
-    const [state, setState] = useState(initialState);
+    const [state,setState] = useState(initialState);
 
-    // on change input value email & password
+    // On change input value (username & password)
     const onChangeValue = (e) => {
         setState({
             ...state,
-            userInfo: {
+            userInfo:{
                 ...state.userInfo,
-                [e.target.name]: e.target.value,
-            },
+                [e.target.name]:e.target.value
+            }
         });
-    };
+    }
 
-    //on submit login form
+    // On Submit Login From
     const submitForm = async (event) => {
         event.preventDefault();
         const data = await loginUser(state.userInfo);
-        if (data.success && data.toker) {
+        if(data.success && data.token){
             setState({
                 ...initialState,
             });
-            localStorage.setItem("loginToken", data.token);
+            localStorage.setItem('loginToken', data.token);
             await isLoggedIn();
-        } else {
+        }
+        else{
             setState({
                 ...state,
-                successMsg: "",
-                errorMsg: data.message,
+                successMsg:'',
+                errorMsg:data.message
             });
         }
-    };
-
-    // show message on error or success
-    let successMsg = "";
-    let errorMsg = "";
-    if (state.errorMsg) {
-        errorMsg = <div>{state.errorMsg}</div>;
-    }
-    if (state.successMsg) {
-        successMsg = <div>{state.successMsg}</div>;
     }
 
-    return (
+    // Show Message on Error or Success
+    let successMsg = '';
+    let errorMsg = '';
+    if(state.errorMsg){
+        errorMsg = <div className="error-msg">{state.errorMsg}</div>;
+    }
+    if(state.successMsg){
+        successMsg = <div className="success-msg">{state.successMsg}</div>;
+    }
+
+
+
+    return(
         <div className="_loginRegister">
             <h1>Login</h1>
-            <form onSubmit={submitForm} noValidate>
+            <form  onSubmit={submitForm} noValidate>
                 <div className="form-control">
-                    <label>Email</label>
-                    <input
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="Enter your email"
-                        value={state.userInfo.email}
-                        onChange={onChangeValue}
-                    />
+                    <label>Username</label>
+                    <input name="username" type="text" required placeholder="Enter your username" value={state.userInfo.username} onChange={onChangeValue} />
                 </div>
                 <div className="form-control">
                     <label>PassWord</label>
-                    <input
-                        name="password"
-                        type="password"
-                        required
-                        placeholder="Enter your password"
-                        value={state.userInfo.password}
-                        onChange={onChangeValue}
-                    />
+                    <input name="password" type="password" required placeholder="Enter your password" value={state.userInfo.password} onChange={onChangeValue} />
                 </div>
                 {errorMsg}
                 {successMsg}
@@ -92,6 +82,6 @@ const login = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Login;

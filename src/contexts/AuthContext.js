@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 
 // define baseURL
 const Axios = axios.create({
-    baseURL: "http://localhost/api/",
+    baseURL: "http://localhost/less_webapp/api/",
 });
 
 class AuthContextProvider extends Component {
@@ -43,7 +43,7 @@ class AuthContextProvider extends Component {
     registerUser = async (user) => {
         // Seingint user registration request:
         const register = await Axios.post("register.php", {
-            name: user.name,
+            username: user.username,
             email: user.email,
             password: user.password,
         });
@@ -51,10 +51,10 @@ class AuthContextProvider extends Component {
     };
 
     // loginUser
-    loginUser = (async) => {
+    loginUser = async (user) => {
         // sending user login request
         const login = await Axios.post("login.php", {
-            email: user.email,
+            username: user.username,
             password: user.password,
         });
         return login.data;
@@ -68,7 +68,7 @@ class AuthContextProvider extends Component {
         if (loginToken) {
             // add token to axios default header
             Axios.defaults.headers.common["Authorization"] =
-                "bearer" + loginToken;
+                "bearer " + loginToken;
 
             // fetch user information
             const { data } = await Axios.get("user-info.php");
@@ -84,21 +84,21 @@ class AuthContextProvider extends Component {
         }
     };
 
-    render(){
+    render() {
         const contextValue = {
-            rootState:this.state,
-            toggleNav:this.toggleNav,
-            isLoggedIn:this.isLoggedIn,
-            registerUser:this.registerUser,
-            loginUser:this.loginUser,
-            logoutUser:this.logoutUser
-        }
-        return(
-            <AuthContext.provider value={contextValue}>
+            rootState: this.state,
+            toggleNav: this.toggleNav,
+            isLoggedIn: this.isLoggedIn,
+            registerUser: this.registerUser,
+            loginUser: this.loginUser,
+            logoutUser: this.logoutUser,
+        };
+        return (
+            <AuthContext.Provider value={contextValue}>
                 {this.props.children}
-            </AuthContext.provider>
-        )
+            </AuthContext.Provider>
+        );
     }
 }
 
-export default AuthContextProvider
+export default AuthContextProvider;

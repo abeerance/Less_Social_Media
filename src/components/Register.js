@@ -1,11 +1,13 @@
 import React, {useContext,useState} from 'react'
-import {MyContext} from '../contexts/MyContext'
+import { AuthContext } from '../contexts/AuthContext';
 
 function Register(){
-    const {toggleNav,registerUser} = useContext(MyContext);
+
+    const {toggleNav,registerUser} = useContext(AuthContext);
+    
     const initialState = {
         userInfo:{
-            name:'',
+            username:'',
             email:'',
             password:'',
         },
@@ -14,7 +16,7 @@ function Register(){
     }
     const [state,setState] = useState(initialState);
 
-    // on Submit the registration Form
+    // On Submit the Registration Form
     const submitForm = async (event) => {
         event.preventDefault();
         const data = await registerUser(state.userInfo);
@@ -33,7 +35,7 @@ function Register(){
         }
     }
 
-    // on change the input value (name, email, password)
+    // On change the Input Value (username, email, password)
     const onChangeValue = (e) => {
         setState({
             ...state,
@@ -44,7 +46,7 @@ function Register(){
         });
     }
     
-    // show Message on success or error
+    // Show Message on Success or Error
     let successMsg = '';
     let errorMsg = '';
     if(state.errorMsg){
@@ -59,8 +61,8 @@ function Register(){
             <h1>Sign Up</h1>
             <form onSubmit={submitForm} noValidate>
                 <div className="form-control">
-                    <label>Full Name</label>
-                    <input name="name" required type="text" value={state.userInfo.name} onChange={onChangeValue} placeholder="Enter your name"/>
+                    <label>Username</label>
+                    <input name="username" required type="text" value={state.userInfo.username} onChange={onChangeValue} placeholder="Enter your username"/>
                 </div>
                 <div className="form-control">
                     <label>Email</label>

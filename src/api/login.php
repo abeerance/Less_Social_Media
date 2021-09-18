@@ -58,7 +58,7 @@ else:
             $query_stmt->bindValue(':username', $username,PDO::PARAM_STR);
             $query_stmt->execute();
 
-            // IF THE USER IS FOUNDED BY USERNAME
+            // IF THE USER IS FOUND BY USERNAME
             if($query_stmt->rowCount()):
                 $row = $query_stmt->fetch(PDO::FETCH_ASSOC);
                 $check_password = password_verify($password, $row['password']);
