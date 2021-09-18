@@ -27,23 +27,23 @@ if($_SERVER["REQUEST_METHOD"] != "POST"):
     $returnData = msg(0,404,'Page Not Found!');
 
 // CHECKING EMPTY FIELDS
-elseif(!isset($data->email) 
+elseif(!isset($data->username) 
     || !isset($data->password)
-    || empty(trim($data->email))
+    || empty(trim($data->username))
     || empty(trim($data->password))
     ):
 
-    $fields = ['fields' => ['email','password']];
+    $fields = ['fields' => ['username','password']];
     $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
 else:
-    $email = trim($data->email);
+    $username = trim($data->username);
     $password = trim($data->password);
 
-    // CHECKING THE EMAIL FORMAT (IF INVALID FORMAT)
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)):
-        $returnData = msg(0,422,'Invalid Email Address!');
+    // CHECKING THE USERNAME 
+    if(strlen($username) < 3):
+        $returnData = msg(0,422,'Your username must be at least 3 characters long!');
     
     // IF PASSWORD IS LESS THAN 8 THE SHOW THE ERROR
     elseif(strlen($password) < 8):
@@ -53,12 +53,12 @@ else:
     else:
         try{
             
-            $fetch_user_by_email = "SELECT * FROM `users` WHERE `email`=:email";
-            $query_stmt = $conn->prepare($fetch_user_by_email);
-            $query_stmt->bindValue(':email', $email,PDO::PARAM_STR);
+            $fetch_user_by_username = "SELECT * FROM `users` WHERE `username`=:username";
+            $query_stmt = $conn->prepare($fetch_user_by_username);
+            $query_stmt->bindValue(':username', $username,PDO::PARAM_STR);
             $query_stmt->execute();
 
-            // IF THE USER IS FOUNDED BY EMAIL
+            // IF THE USER IS FOUNDED BY USERNAME
             if($query_stmt->rowCount()):
                 $row = $query_stmt->fetch(PDO::FETCH_ASSOC);
                 $check_password = password_verify($password, $row['password']);
@@ -69,7 +69,7 @@ else:
 
                     $jwt = new JwtHandler();
                     $token = $jwt->_jwt_encode_data(
-                        'http://localhost/php_auth_api/',
+                        'http://localhost/less_webapp/',
                         array("user_id"=> $row['id'])
                     );
                     
@@ -84,9 +84,9 @@ else:
                     $returnData = msg(0,422,'Invalid Password!');
                 endif;
 
-            // IF THE USER IS NOT FOUNDED BY EMAIL THEN SHOW THE FOLLOWING ERROR
+            // IF THE USER IS NOT FOUNDED BY USERNAME THEN SHOW THE FOLLOWING ERROR
             else:
-                $returnData = msg(0,422,'Invalid Email Address!');
+                $returnData = msg(0,422,'Invalid username!');
             endif;
         }
         catch(PDOException $e){

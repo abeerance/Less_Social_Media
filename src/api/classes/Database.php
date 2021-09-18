@@ -2,7 +2,7 @@
 class Database{
 
     private $db_host = 'localhost';
-    private $db_name = '';
+    private $db_name = 'less_webapp';
     private $db_username = 'root';
     private $db_password = '';
 
