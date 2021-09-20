@@ -41,9 +41,18 @@ class AuthContextProvider extends Component {
         window.location.reload(false);
     };
 
+    // password reset
+    passwordReset = () => {
+        this.setState({
+            ...this.state,
+            isauth: false,
+        })
+        console.log('pw reseeeetetnet')
+    }
+
     // registerUser
     registerUser = async (user) => {
-        // Seingint user registration request:
+        // Sending user registration request:
         const register = await Axios.post("register.php", {
             username: user.username,
             email: user.email,
@@ -94,6 +103,7 @@ class AuthContextProvider extends Component {
             registerUser: this.registerUser,
             loginUser: this.loginUser,
             logoutUser: this.logoutUser,
+            passwordReset: this.passwordReset
         };
         return (
             <AuthContext.Provider value={contextValue}>

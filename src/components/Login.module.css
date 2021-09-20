@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 form{
@@ -62,8 +63,13 @@ input:focus{
     border-top: #00113a solid 1px;
 }
 
+.pwResetDiv {
+    display: flex;
+    width: 210px;
+    justify-content: flex-end;
+}
+
 .reset-password-button {
-    align-self: flex-end;
     margin-top: 12px;
     border: none;
     background: none;
