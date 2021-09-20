@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { AuthContext } from '../contexts/AuthContext';
+import classes from './Home.module.css'
 
 // importing the Login & Register Componet
 import Login from './Login'
@@ -14,7 +15,7 @@ function Home(){
     if(isAuth)
     {
         return(
-            <div className="userInfo">
+            <div className={classes.userinfo}>
                 <div className="_img"><span role="img" aria-label="User Image">👦</span></div>
                 <h1>{theUser.username}</h1>
                 <div className="_email"><span>{theUser.email}</span></div>

@@ -1,0 +1,76 @@
+._signUpRegister{
+    min-width: 360px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    height: 120px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    min-width: 210px;
+    font-size: 0.9em;
+    padding: 0.5em 0.4em;
+    margin-bottom: 1.5em;
+    border-radius: 3px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input:focus{
+    outline: none;
+    border: #b3dcd4 2px solid;
+}
+
+.signup-button{
+    margin-top: 10px;
+    min-width: 210px;
+    background: #ffab38;
+    border: none;
+    color: white;
+    padding: 0.5em 0.4em;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.backToLogin {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    border-top: #ffab38 solid 1px;
+}
+
+._login{
+    font-size: 14px;
+}
+
+.backToLogin-button{
+    font-size: 14px;
+    margin-left: 6px;
+    border: none;
+    color: #ffab38;;
+    font-weight: 600;
+    background: none;
+}

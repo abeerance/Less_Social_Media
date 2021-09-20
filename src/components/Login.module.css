@@ -1,0 +1,85 @@
+._loginRegister{
+    min-width: 360px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    height: 120px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    min-width: 210px;
+    font-size: 0.9em;
+    padding: 0.5em 0.4em;
+    margin-bottom: 1.5em;
+    border-radius: 3px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input:focus{
+    outline: none;
+    border: #b3dcd4 2px solid;
+}
+
+.login-button{
+    margin-top: 10px;
+    min-width: 210px;
+    background: #00113a;
+    border: none;
+    color: white;
+    padding: 0.5em 0.4em;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    border-top: #00113a solid 1px;
+}
+
+.reset-password-button {
+    align-self: flex-end;
+    margin-top: 12px;
+    border: none;
+    background: none;
+    color: rgba(75, 85, 99, 0.8);
+    font-weight: 600;
+}
+
+._signup{
+    font-size: 14px;
+}
+
+.register-button{
+    font-size: 14px;
+    margin-left: 6px;
+    border: none;
+    color: #00113a;
+    font-weight: 600;
+    background: none;
+}

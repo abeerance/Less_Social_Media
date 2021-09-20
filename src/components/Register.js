@@ -1,5 +1,7 @@
 import React, {useContext,useState} from 'react'
 import { AuthContext } from '../contexts/AuthContext';
+import classes from './Register.module.css'
+import lessLogo from '../assets/login-landing.svg'
 
 function Register(){
 
@@ -57,29 +59,27 @@ function Register(){
     }
 
     return(
-        <div className="_loginRegister">
-            <h1>Sign Up</h1>
+        <div className={classes._signUpRegister}>
+            <img src={lessLogo} alt="Less logo" />
             <form onSubmit={submitForm} noValidate>
-                <div className="form-control">
-                    <label>Username</label>
-                    <input name="username" required type="text" value={state.userInfo.username} onChange={onChangeValue} placeholder="Enter your username"/>
+                <div className={classes['form-control']}>
+                    <input name="username" required type="text" value={state.userInfo.username} onChange={onChangeValue} placeholder="Username"/>
                 </div>
-                <div className="form-control">
-                    <label>Email</label>
-                    <input name="email" required type="email" value={state.userInfo.email} onChange={onChangeValue} placeholder="Enter your email"/>
+                <div className={classes['form-control']}>
+                    <input name="email" required type="email" value={state.userInfo.email} onChange={onChangeValue} placeholder="Email"/>
                 </div>
-                <div className="form-control">
-                    <label>Password</label>
-                    <input name="password" required type="password" value={state.userInfo.password} onChange={onChangeValue} placeholder="Enter your password"/>
+                <div className={classes['form-control']}>
+                    <input name="password" required type="password" value={state.userInfo.password} onChange={onChangeValue} placeholder="Password"/>
                 </div>
                 {errorMsg}
                 {successMsg}
-                <div className="form-control">
-                    <button type="submit">Sign Up</button>
+                <div className={classes['form-control']}>
+                    <button className={classes['signup-button']} type="submit">Sign Up</button>
                 </div>
             </form>
-            <div className="_navBtn">
-                <button  onClick={toggleNav}>Login</button>
+            <div className={classes['backToLogin']}>
+                <p className={classes['_login']}>Already have an account?</p>
+                <button className={classes['backToLogin-button']} onClick={toggleNav}>Login</button>
             </div>
         </div>
     );

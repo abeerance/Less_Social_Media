@@ -1,5 +1,7 @@
 import React, {useContext, useState} from 'react'
 import { AuthContext } from '../contexts/AuthContext';
+import classes from './Login.module.css'
+import lessLogo from '../assets/login-landing.svg'
 
 function Login(){
 
@@ -60,25 +62,25 @@ function Login(){
 
 
     return(
-        <div className="_loginRegister">
-            <h1>Login</h1>
-            <form  onSubmit={submitForm} noValidate>
-                <div className="form-control">
-                    <label>Username</label>
-                    <input name="username" type="text" required placeholder="Enter your username" value={state.userInfo.username} onChange={onChangeValue} />
+        <div className={classes._loginRegister}>
+            <img src={lessLogo} alt="less logo" className={classes['img']}/>
+            <form onSubmit={submitForm} noValidate>
+                <div className={classes['form-control']}>
+                    <input name="username" type="text" required placeholder="Username" value={state.userInfo.username} onChange={onChangeValue} />
                 </div>
-                <div className="form-control">
-                    <label>PassWord</label>
-                    <input name="password" type="password" required placeholder="Enter your password" value={state.userInfo.password} onChange={onChangeValue} />
+                <div className={classes['form-control']}>
+                    <input name="password" type="password" required placeholder="Password" value={state.userInfo.password} onChange={onChangeValue} />
                 </div>
                 {errorMsg}
                 {successMsg}
-                <div className="form-control">
-                    <button type="submit">Login</button>
+                <div className={classes['form-control']}>
+                    <button className={classes['login-button']} type="submit">Login</button>
+                    <button className={classes['reset-password-button']} type="submit">Forgotten Password?</button>
                 </div>
             </form>
-            <div className="_navBtn">
-                <button onClick={toggleNav}>Register</button>
+            <div className={classes['register']}>
+                <p className={classes['_signup']}>Don't have an account yet?</p>
+                <button onClick={toggleNav} className={classes['register-button']}>Sign-Up</button>
             </div>
         </div>
     );
