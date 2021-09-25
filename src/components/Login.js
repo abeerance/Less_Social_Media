@@ -5,7 +5,7 @@ import lessLogo from '../assets/login-landing.svg'
 
 function Login(){
 
-    const {toggleNav,loginUser,isLoggedIn,passwordReset} = useContext(AuthContext);
+    const {toggleNav,loginUser,isLoggedIn} = useContext(AuthContext);
 
     const initialState = {
         userInfo:{
@@ -78,9 +78,6 @@ function Login(){
                     
                 </div>
             </form>
-            <div className={classes.pwResetDiv}>
-                <button onClick={passwordReset} className={classes['reset-password-button']}>Forgotten Password?</button>
-            </div>
             <div className={classes['register']}>
                 <p className={classes['_signup']}>Don't have an account yet?</p>
                 <button onClick={toggleNav} className={classes['register-button']}>Sign-Up</button>

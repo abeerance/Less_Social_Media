@@ -41,15 +41,6 @@ class AuthContextProvider extends Component {
         window.location.reload(false);
     };
 
-    // password reset
-    passwordReset = () => {
-        this.setState({
-            ...this.state,
-            isauth: false,
-        })
-        console.log('pw reseeeetetnet')
-    }
-
     // registerUser
     registerUser = async (user) => {
         // Sending user registration request:
@@ -103,7 +94,6 @@ class AuthContextProvider extends Component {
             registerUser: this.registerUser,
             loginUser: this.loginUser,
             logoutUser: this.logoutUser,
-            passwordReset: this.passwordReset
         };
         return (
             <AuthContext.Provider value={contextValue}>
