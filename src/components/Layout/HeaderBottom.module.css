@@ -24,7 +24,8 @@ nav ul{
     list-style-type: none;
 }
 
-nav ul li {
+.navigationIcon{
+    color: #fff;
     height: 25px;
     width: 25px;
     font-size: 25px;
