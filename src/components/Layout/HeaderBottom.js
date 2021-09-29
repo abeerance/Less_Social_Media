@@ -5,10 +5,7 @@ import { RiHome2Line, RiAddCircleLine, RiCompassDiscoverLine, RiChatSmile2Line, 
 
 
 
-const HeaderBottom = () => {
-    // get current path
-    const {pathname} = useLocation()
-    
+const HeaderBottom = () => {    
 
     return (
         <Fragment>
@@ -16,7 +13,7 @@ const HeaderBottom = () => {
                 <nav>
                     <ul className={classes['nav ul']}>
                         <li className={classes['nav ul li']}>
-                            <NavLink to="/"><RiHome2Line className={classes.navigationIcon}/></NavLink>    
+                            <NavLink exact to="/"><RiHome2Line className={classes.navigationIcon}/></NavLink>    
                         </li>
                         <li className={classes['nav ul li']}>
                             <NavLink to="/newpost"><RiAddCircleLine className={classes.navigationIcon}/></NavLink>    

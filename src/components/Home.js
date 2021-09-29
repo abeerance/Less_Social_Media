@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import classes from "./Home.module.css";
 import HeaderBottom from "./Layout/HeaderBottom";
 import Feed from "./Pages/Feed";
@@ -16,9 +16,12 @@ import Register from "./Register";
 function Home() {
     const { rootState } = useContext(AuthContext);
     const { isAuth, showLogin } = rootState;
+    const history = useHistory()
 
     // if user Logged in
     if (isAuth) {
+        // ERROR MELDUNG VORHANDEN
+        history.push('/')
         return (
             <header>
                 <Switch>
