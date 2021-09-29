@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import classes from "./Home.module.css";
 import HeaderBottom from "./Layout/HeaderBottom";
 import Feed from "./Pages/Feed";
@@ -20,24 +20,16 @@ function Home() {
     // if user Logged in
     if (isAuth) {
         return (
-            <div>
-                <Route path="/home">
-                    <Feed />
-                </Route>
-                <Route path="/newpost">
-                    <NewPost />
-                </Route>
-                <Route path="/discover">
-                    <Discover />
-                </Route>
-                <Route path="/messages">
-                    <Messages />
-                </Route>
-                <Route path="/personalfeed">
-                    <PersonalFeed />
-                </Route>
+            <header>
+                <Switch>
+                    <Route exact path="/" component={Feed} />
+                    <Route path="/newpost" component={NewPost} />
+                    <Route path="/discover" component={Discover} />
+                    <Route path="/messages" component={Messages} />
+                    <Route path="/personalfeed" component={PersonalFeed} />
+                </Switch>
                 <HeaderBottom />
-            </div>
+            </header>
         );
     }
     // show Login Or Register Page according to the condition
