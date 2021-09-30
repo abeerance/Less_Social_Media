@@ -1,0 +1,10 @@
+.newPostSection {
+    height: 100vh;
+    padding: 54px 0;
+}
+
+.imagePreview{
+    height: 400px;
+    background-image: url('../../assets/background-img-upload.svg');
+    width: 100%;
+}

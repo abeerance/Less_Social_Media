@@ -1,11 +1,11 @@
-import React, {Fragment} from "react";
+import React from "react";
 import classes from './Feed.module.css'
 
 const Feed = () => {
     return (
-        <Fragment>
+        <div className={classes.feedSection}>
             <h2>This the public feed</h2>
-        </Fragment>
+        </div>
     )
 }
 

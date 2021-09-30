@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
+import classes from './Messages.module.css'
 
 const Messages = () => {
     return(
-        <Fragment>
+        <div className={classes.messagesSection}>
             <h2>Messages</h2>
-        </Fragment>
+        </div>
     )
 }
 

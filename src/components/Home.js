@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { Switch, Route, useHistory } from "react-router-dom";
 import classes from "./Home.module.css";
+import HeaderTop from "./Layout/HeaderTop";
 import HeaderBottom from "./Layout/HeaderBottom";
 import Feed from "./Pages/Feed";
 import NewPost from "./Pages/NewPost";
@@ -24,6 +25,7 @@ function Home() {
         history.push('/')
         return (
             <header>
+                <HeaderTop />
                 <Switch>
                     <Route exact path="/" component={Feed} />
                     <Route path="/newpost" component={NewPost} />

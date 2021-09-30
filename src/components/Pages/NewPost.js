@@ -1,11 +1,13 @@
-import React, {Fragment} from "react";
+import React, {useState} from "react";
 import classes from './NewPost.module.css'
+import Button from '@mui/material/Button'
 
 const NewPost = () => {
+
     return (
-        <Fragment>
-                <h2>Hello I'm adding a new post!</h2>
-        </Fragment>
+        <div className={classes.newPostSection}>
+            <div className={classes.imagePreview} />
+        </div>
     )
 }
 

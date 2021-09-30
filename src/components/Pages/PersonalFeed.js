@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
+import classes from './PersonalFeed.module.css'
 
 const PersonalFeed = () => {
     return (
-        <Fragment>
+        <div className={classes.personalSection}>
             <h2>PersonalFeed</h2>
-        </Fragment>
+        </div>
     );
 };
 
