@@ -1,10 +1,75 @@
 .newPostSection {
     height: 100vh;
     padding: 54px 0;
+    overflow-x: hidden;
 }
 
-.imagePreview{
-    height: 400px;
-    background-image: url('../../assets/background-img-upload.svg');
+.imagePreviewContainer {
+    height: 380px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.imgPlaceholder{
+    height: 100%;
+}
+
+.shareText {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creativeMindText {
+    font-size: 15px;
+}
+
+.hideInput{
+    display: none;
+}
+
+.selectImageButton{
+    margin-top: 15px;
+    padding: 0.5em 1.25em;
+    border-radius: 10px;
+    background:#ffab38;
+    color: white;
+    font-weight: 600;
+}
+
+.preview {
+    margin-top: 50;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.imagePreviewResize {
     width: 100%;
+    height: 380px;
+}
+
+.deleteButton {
+    background: #ffab38;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    z-index: 100;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteButtonIcon {
+    color: white;
+    font-size: 20px;
 }
