@@ -76,14 +76,21 @@ else:
 
                 $insert_stmt->execute();
 
+                
+
                 $returnData = msg(1,201,'You have successfully registered.');
 
+                
             endif;
 
         }
         catch(PDOException $e){
             $returnData = msg(0,500,$e->getMessage());
         }
+
+        // Create user folder with the username
+        $dirname = "./user-assets/".$username;
+        mkdir($dirname, 0777, true);
     endif;
     
 endif;

@@ -5,16 +5,13 @@
 }
 
 .imagePreviewContainer {
+    margin-top: 15px;
     height: 380px;
     max-width: 100%;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
 
-}
-
-.imgPlaceholder{
-    height: 100%;
 }
 
 .shareText {
@@ -33,7 +30,7 @@
 }
 
 .selectImageButton{
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 0.5em 1.25em;
     border-radius: 10px;
     background:#ffab38;
@@ -42,7 +39,6 @@
 }
 
 .preview {
-    margin-top: 50;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -72,4 +68,63 @@
 .deleteButtonIcon {
     color: white;
     font-size: 20px;
+}
+
+.hello {
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadButton{
+    position: absolute;
+    background: #ffab38;
+    border: none;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.newPostModal{
+    position: absolute;
+    padding: 1.25em 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.smallPreview {
+    width: 90%;
+    height: auto;
+}
+
+.textareaStyle {
+    width: 90%;
+    resize: none;
+    border-radius: 10px;
+    padding: 1em;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.textareaStyle:focus {
+    outline: none;
+}
+
+.uploadToDBButton {
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 0.5em 1.5em;
+    border-radius: 10px;
+    background: #00113a;
 }
