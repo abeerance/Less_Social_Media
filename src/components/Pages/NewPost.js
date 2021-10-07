@@ -4,7 +4,7 @@ import { RiCloseFill } from "react-icons/ri";
 import Modal from '@mui/material/Modal';
 import axios from "axios";
 
-let url ='http://localhost/less_webapp/api/'
+let url ='http://127.0.0.1/less_webapp/api/add-post.php'
 
 const NewPost = () => {
     const [selectedImage, setSelectedImage] = useState();
