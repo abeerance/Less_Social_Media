@@ -1,0 +1,21 @@
+.avatarContainer {
+    height: 50px;
+    width: 100%;
+    background: pink;
+    padding: 0.5em 0.4em;
+    display: flex;
+    align-items: center;
+}
+
+.avatarImage {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    margin-right: 5px;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 15px;
+}

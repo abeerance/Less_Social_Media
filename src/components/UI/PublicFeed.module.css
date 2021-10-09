@@ -1,0 +1,32 @@
+.feedContainer {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.imageContainer {
+    height: 380px;
+    width: 100%;
+    background: brown;
+}
+
+.commentContainer {
+    width: 100%;
+    padding: 0.4em 0.5em;
+}
+
+.commentContent {
+    display: flex;
+    background: red;
+}
+
+.userName {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.fuckingP{
+    font-size: 14px;
+    width: 95vw;
+    word-wrap: break-word;
+}

@@ -6,10 +6,8 @@ import Modal from "@mui/material/Modal";
 import axios from "axios";
 
 const NewPost = () => {
-
     const {rootState } = useContext(AuthContext)
     const {isAuth,theUser} = rootState
-
     const [selectedImage, setSelectedImage] = useState();
     const [open, setOpen] = React.useState(false);
     const [commentText, setCommentText] = useState("");

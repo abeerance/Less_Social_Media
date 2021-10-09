@@ -1,10 +1,11 @@
 import React from "react";
 import classes from './Feed.module.css'
+import PublicFeed from "../UI/PublicFeed";
 
 const Feed = () => {
     return (
         <div className={classes.feedSection}>
-            <h2>This the public feed</h2>
+            <PublicFeed />
         </div>
     )
 }
