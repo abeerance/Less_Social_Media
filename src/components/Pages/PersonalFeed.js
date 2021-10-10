@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 import classes from './PersonalFeed.module.css'
-import Modal from "@mui/material/Modal";
 import axios from "axios";
 import LoggedInUser from "../UI/LoggedInUser";
 import AvatarPersonalPicture from "../UI/AvatarPersonalPicture";
 import AvatarInfoContainer from "../UI/AvatarInfoContainer";
 import EditProfileButton from "../UI/Buttons/EditProfileButton";
+import PersonalFeedPhotos from "../UI/PersonalSection/PersonalFeedPhotos";
 
 const PersonalFeed = () => {
     const { rootState } = useContext(AuthContext);
@@ -53,6 +53,7 @@ const PersonalFeed = () => {
             </div>
             <EditProfileButton />
             <div className={classes.profileLine} />
+            <PersonalFeedPhotos user={user}/>
         </div>
     );
 };

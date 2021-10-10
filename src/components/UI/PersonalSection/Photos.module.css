@@ -1,0 +1,7 @@
+.imageContent {
+    background: blue;;
+    height: 150px;
+    overflow: hidden;;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

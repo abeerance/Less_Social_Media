@@ -11,3 +11,11 @@
     height: 80px;
     align-items: center;
 }
+
+.profileLine {
+    margin-top: 20px;
+    height: 1px;
+    width: 95%;
+    background: rgb(196, 196, 196);
+    margin-bottom: 20px;
+}
