@@ -1,0 +1,16 @@
+.editProfileButton{
+    margin-top: 10px;
+    background: none;
+    border: none;
+    background: #00113a;
+    color: white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.editProfileButton:hover{
+    background: #8b215f;
+}

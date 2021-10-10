@@ -37,10 +37,8 @@ const Feed = () => {
             }
         };
         getFeedback();
-        console.log(feedback)
     }, [rootState, isAuth, theUser]);
     
-
     return (
         <div className={classes.feedSection}>
             <PublicFeed feedback={feedback}/>

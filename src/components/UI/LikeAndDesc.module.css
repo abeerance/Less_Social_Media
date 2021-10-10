@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     padding: 0.4em 0.5em;
-    border-bottom: 1px gray solid;
+    border-bottom: 1px solid rgb(196, 196, 196);
 }
 
 .buttonPlacement {

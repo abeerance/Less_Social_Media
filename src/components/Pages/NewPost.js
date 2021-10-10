@@ -30,7 +30,6 @@ const NewPost = () => {
     const uploadHandler = async (event) => {
         event.preventDefault();
 
-        // WRITE HERE get logintoken FROM LOCAL STORAGE
         if(isAuth){
             const username = theUser.username
             console.log(username)

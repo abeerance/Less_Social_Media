@@ -1,0 +1,6 @@
+.avatarText {
+    font-size: 13px;
+    width: 270px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

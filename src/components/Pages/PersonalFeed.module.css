@@ -1,4 +1,13 @@
 .personalSection {
-    height: 100vh;
-    padding: 54px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 54px 10px;
+}
+
+.userinfo {
+    display: flex;
+    background: palegreen;
+    height: 80px;
+    align-items: center;
 }
