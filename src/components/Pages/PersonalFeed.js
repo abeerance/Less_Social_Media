@@ -51,7 +51,7 @@ const PersonalFeed = () => {
                     <AvatarInfoContainer />
                 </div>
             </div>
-            <EditProfileButton />
+            <EditProfileButton user={user} />
             <div className={classes.profileLine} />
             <PersonalFeedPhotos user={user} />
         </div>

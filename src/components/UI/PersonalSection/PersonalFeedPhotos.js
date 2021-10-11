@@ -3,7 +3,19 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import classes from "./PersonalFeedPhotos.module.css";
 import Modal from "@mui/material/Modal";
 import axios from "axios";
-import testimage from '../../../user-assets/sample1.jpeg'
+import testimage from '../../../assets/sample1.jpeg'
+import testimage2 from '../../../assets/sample2.jpg'
+import testimage3 from '../../../assets/sample3.jpg'
+import testimage4 from '../../../assets/sample4.jpg'
+import testimage5 from '../../../assets/sample5.jpg'
+import testimage6 from '../../../assets/sample6.jpg'
+import testimage7 from '../../../assets/sample7.jpg'
+import testimage8 from '../../../assets/sample8.jpg'
+import testimage9 from '../../../assets/sample9.jpg'
+import testimage10 from '../../../assets/sample10.jpg'
+import testimage11 from '../../../assets/sample11.jpg'
+import testimage12 from '../../../assets/sample12.jpg'
+
 
 const FeedPhotos = ({ images }) => {
     <div className={classes.imageContent} />;
@@ -53,37 +65,37 @@ const PersonalFeedPhotos = ({ user }) => {
                     <img src={testimage} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage2} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage3} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage4} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage5} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage6} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage7} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage8} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage9} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage10} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage11} className={classes.imageContent} alt="" />
                 </div>
                 <div className={classes.imageContainer}>
-                    <img src={testimage} className={classes.imageContent} alt="" />
+                    <img src={testimage12} className={classes.imageContent} alt="" />
                 </div>
             </div>
         )

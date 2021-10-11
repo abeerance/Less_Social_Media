@@ -2,7 +2,13 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background: blue;
     overflow: hidden;
     margin-right: 10px;
+    overflow: hidden;
+}
+
+.avatarPicture {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }

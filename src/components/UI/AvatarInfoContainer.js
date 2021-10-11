@@ -3,7 +3,7 @@ import classes from './AvatarInfoContainer.module.css'
 
 const AvatarInfoContainer = () => {
     return(
-        <p className={classes.avatarText}>Loiahdohasdhioasasdiaujsdhasidhuiashduihasduihaiushdiuashdiuhasdiuih</p>
+        <p className={classes.avatarText}>This is a placeholder user description</p>
     )
 }
 
