@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 form{
@@ -73,4 +74,56 @@ input:focus{
     color: #ffab38;;
     font-weight: 600;
     background: none;
+}
+
+/**### MEDIA QUERIES ####**/
+
+/* screens 1024px and higher */
+@media only screen and (min-width: 1024px) {
+    .landingwrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('../assets/landingimage.webp');
+        background-repeat: none;
+        background-size: cover;
+    }
+
+    ._signUpRegister {
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        width: 400px;
+        height: 700px;
+        border-radius: 20px;
+    }
+
+    img {
+        height: 150px;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    input {
+        width: 250px;
+        margin-bottom: 2em;
+    }
+}
+
+/* screens 1281px and higher */
+@media only screen and (min-width:1281px){
+
+    ._signUpRegister  {
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        width: 600px;
+        height: 800px;
+    }
+
+    img {
+        height: 150px;
+        width: auto;
+        margin-bottom: 30px;
+    }
 }

@@ -2,3 +2,24 @@
     font-weight: 600;
     font-size: 15px;
 }
+
+/* ipad */
+@media only screen and (min-width: 738px) and (max-height: 1024px) {
+    .username {
+        font-size: 18px;
+    }
+}
+
+/* ipad pro */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) {
+    .username {
+        font-size: 20px;
+    }
+}
+
+/* screens 1024px and higher */
+@media only screen and (min-width: 1025px) {
+    .username {
+        font-size: 16px;
+    }
+}

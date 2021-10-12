@@ -43,17 +43,19 @@ const PersonalFeed = () => {
     }, [rootState, isAuth, theUser]);
 
     return (
-        <div className={classes.personalSection}>
-            <div className={classes.userinfo}>
-                <AvatarPersonalPicture />
-                <div>
-                    <LoggedInUser user={user} />
-                    <AvatarInfoContainer />
+        <div className={classes.position}>
+            <div className={classes.personalSection}>
+                <div className={classes.userinfo}>
+                    <AvatarPersonalPicture />
+                    <div>
+                        <LoggedInUser user={user} />
+                        <AvatarInfoContainer />
+                    </div>
                 </div>
+                <EditProfileButton user={user} />
+                <div className={classes.profileLine} />
+                <PersonalFeedPhotos user={user} />
             </div>
-            <EditProfileButton user={user} />
-            <div className={classes.profileLine} />
-            <PersonalFeedPhotos user={user} />
         </div>
     );
 };

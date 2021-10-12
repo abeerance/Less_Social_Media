@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import classes from "./EditProfileButton.module.css";
 import Modal from "@mui/material/Modal";
 import AvatarPlaceholder from "../../../assets/avatarPlaceholder.webp";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const EditProfileButton = ({ user }) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const [bio, setBio] = "";
+    const [bio, setBio] = useState("");
 
-    const logoutUserHandler = () => {
-        console.log('logout')
-    }
+    const { rootState, logoutUser } = useContext(AuthContext);
+    const { isAuth, theUser } = rootState;
 
     return (
         <div>
@@ -62,7 +62,12 @@ const EditProfileButton = ({ user }) => {
                             Submit changes
                         </button>
                     </form>
-                    <button className={classes.logoutButton} onClick={logoutUserHandler}>Log out</button>
+                    <button
+                        className={classes.logoutButton}
+                        onClick={logoutUser}
+                    >
+                        Log out
+                    </button>
                 </div>
             </Modal>
         </div>

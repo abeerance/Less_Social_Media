@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from '../../contexts/AuthContext';
+import { AuthContext } from "../../contexts/AuthContext";
 import classes from "./NewPost.module.css";
 import { RiCloseFill } from "react-icons/ri";
 import Modal from "@mui/material/Modal";
 import axios from "axios";
 
 const NewPost = () => {
-    const {rootState } = useContext(AuthContext)
-    const {isAuth,theUser} = rootState
+    const { rootState } = useContext(AuthContext);
+    const { isAuth, theUser } = rootState;
     const [selectedImage, setSelectedImage] = useState();
     const [open, setOpen] = React.useState(false);
     const [commentText, setCommentText] = useState("");
@@ -30,10 +30,10 @@ const NewPost = () => {
     const uploadHandler = async (event) => {
         event.preventDefault();
 
-        if(isAuth){
-            const username = theUser.username
-            console.log(username)
-                // php url
+        if (isAuth) {
+            const username = theUser.username;
+            console.log(username);
+            // php url
             let url = "http://127.0.0.1/less_webapp/api/add-post.php";
 
             // new formData
@@ -63,11 +63,13 @@ const NewPost = () => {
             <div className={classes.imagePreviewContainer}>
                 {selectedImage && (
                     <div className={classes.preview}>
-                        <img
-                            src={URL.createObjectURL(selectedImage)}
-                            className={classes.imagePreviewResize}
-                            alt="Thumb"
-                        />
+                        <div className={classes.imagePreviewContainerStyle}>
+                            <img
+                                src={URL.createObjectURL(selectedImage)}
+                                className={classes.imagePreviewResize}
+                                alt="Thumb"
+                            />
+                        </div>
                         <button
                             onClick={removeSelectedImageHandler}
                             className={classes.deleteButton}
@@ -114,7 +116,7 @@ const NewPost = () => {
             </div>
             <div>
                 <div className={classes.shareText}>
-                    <h2>Share</h2>
+                    <h2 className={classes.headline}>Share</h2>
                     <p className={classes.creativeMindText}>
                         Your creative mind with the world!
                     </p>
