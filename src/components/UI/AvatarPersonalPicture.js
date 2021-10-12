@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './AvatarPersonalPicture.module.css'
-import avatarPlaceholder from '../../assets/avatarPlaceholder.jpeg'
+import avatarPlaceholder from '../../assets/avatarPlaceholder.webp'
 
 const AvatarPersonalPicture = () => {
     return(

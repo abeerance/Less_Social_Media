@@ -19,9 +19,6 @@ const HeaderBottom = () => {
                             <NavLink to="/newpost"><RiAddCircleLine className={classes.navigationIconBottom}/></NavLink>    
                         </li>
                         <li>
-                            <NavLink to="/discover"><RiCompassDiscoverLine className={classes.navigationIconBottom}/></NavLink>    
-                        </li>
-                        <li>
                             <NavLink to="/messages"><RiChatSmile2Line className={classes.navigationIconBottom}/></NavLink>    
                         </li>
                         <li>

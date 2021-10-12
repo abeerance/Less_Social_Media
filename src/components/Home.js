@@ -29,7 +29,6 @@ function Home() {
                 <Switch>
                     <Route exact path="/" component={Feed} />
                     <Route path="/newpost" component={NewPost} />
-                    <Route path="/discover" component={Discover} />
                     <Route path="/messages" component={Messages} />
                     <Route path="/personalfeed" component={PersonalFeed} />
                 </Switch>
