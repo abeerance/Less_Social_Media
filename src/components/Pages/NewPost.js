@@ -52,6 +52,7 @@ const NewPost = () => {
                     console.log(response);
                     setSelectedImage();
                     handleClose()
+                    setCommentText("")
                 })
                 .catch((response) => {
                     //handle error
