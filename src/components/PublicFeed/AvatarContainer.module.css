@@ -9,9 +9,15 @@
 .avatarImage {
     width: 35px;
     height: 35px;
-    background: blue;
     border-radius: 50%;
     margin-right: 5px;
+    overflow: hidden;
+}
+
+.avatarResize {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /**### MEDIA QUERIES ####**/

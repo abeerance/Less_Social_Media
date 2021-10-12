@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import classes from './Feed.module.css'
-import PublicFeed from "../UI/PublicFeed";
+import PublicFeed from "../PublicFeed/PublicFeed";
 import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext";
 

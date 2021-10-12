@@ -29,7 +29,10 @@ $query_stmt = $conn->prepare($fetch_get_all_post);
 // Data binding
 $query_stmt->bindValue(':userID', $userID,PDO::PARAM_INT);
 $query_stmt->execute();
-$row = $query_stmt->fetchAll(PDO::FETCH_DEFAULT);
+$rowFetch = $query_stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo json_encode($row);
+echo json_encode($rowFetch);
 ?>
+
+
+

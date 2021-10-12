@@ -2,7 +2,8 @@ import React, {useContext,useState, useEffect} from "react";
 import classes from './AvatarContainer.module.css'
 import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext";
-import User from "./User";
+import User from "../UI/User";
+import AvatarAllPlaceholder from '../../assets/avatarPlaceholder8.webp'
 
 const AvatarContainer = ({username}) => {
     const { rootState } = useContext(AuthContext);
@@ -40,7 +41,9 @@ const AvatarContainer = ({username}) => {
     
     return (
         <div className={classes.avatarContainer}>
-            <div className={classes.avatarImage}/>
+            <div className={classes.avatarImage}>
+                <img src={AvatarAllPlaceholder} alt="Placeholder" className={classes.avatarResize}/>
+            </div>
             <User user={user}/>
         </div>
     )

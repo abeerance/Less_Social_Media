@@ -1,20 +1,20 @@
 import React, { useState, useContext, useEffect, createRef } from "react";
-import { AuthContext } from "../../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import classes from "./PersonalFeedPhotos.module.css";
 import Modal from "@mui/material/Modal";
 import axios from "axios";
-import testimage from "../../../assets/sample1.webp";
-import testimage2 from "../../../assets/sample2.webp";
-import testimage3 from "../../../assets/sample3.webp";
-import testimage4 from "../../../assets/sample4.webp";
-import testimage5 from "../../../assets/sample5.webp";
-import testimage6 from "../../../assets/sample6.webp";
-import testimage7 from "../../../assets/sample7.webp";
-import testimage8 from "../../../assets/sample8.webp";
-import testimage9 from "../../../assets/sample9.webp";
-import testimage10 from "../../../assets/sample10.webp";
-import testimage11 from "../../../assets/sample11.webp";
-import testimage12 from "../../../assets/sample12.webp";
+import testimage from "../../assets/sample1.webp"
+import testimage2 from "../../assets/sample2.webp";
+import testimage3 from "../../assets/sample3.webp";
+import testimage4 from "../../assets/sample4.webp";
+import testimage5 from "../../assets/sample5.webp";
+import testimage6 from "../../assets/sample6.webp";
+import testimage7 from "../../assets/sample7.webp";
+import testimage8 from "../../assets/sample8.webp";
+import testimage9 from "../../assets/sample9.webp";
+import testimage10 from "../../assets/sample10.webp";
+import testimage11 from "../../assets/sample11.webp";
+import testimage12 from "../../assets/sample12.webp";
 
 const PersonalFeedPhotos = ({ user }) => {
     const [open, setOpen] = React.useState(false);

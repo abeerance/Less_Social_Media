@@ -2,11 +2,11 @@ import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import classes from "./PersonalFeed.module.css";
 import axios from "axios";
-import LoggedInUser from "../UI/LoggedInUser";
-import AvatarPersonalPicture from "../UI/AvatarPersonalPicture";
-import AvatarInfoContainer from "../UI/AvatarInfoContainer";
+import LoggedInUser from "../PersonalSection/LoggedInUser"
+import AvatarPersonalPicture from "../PersonalSection/AvatarPersonalPicture";
+import AvatarInfoContainer from "../PersonalSection/AvatarInfoContainer";
 import EditProfileButton from "../UI/Buttons/EditProfileButton";
-import PersonalFeedPhotos from "../UI/PersonalSection/PersonalFeedPhotos";
+import PersonalFeedPhotos from "../PersonalSection/PersonalFeedPhotos";
 
 const PersonalFeed = () => {
     const { rootState } = useContext(AuthContext);

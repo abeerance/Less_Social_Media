@@ -7,21 +7,21 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 require __DIR__.'/classes/Database.php';
 
-$id = json_decode(file_get_contents("php://input"));
-$id = $_POST['id'];
+// set username
+$username = $_POST["username"];
 
 // DB Connection
 $db_connection = new Database();
 $conn = $db_connection->dbConnection();
 
 // fetch user ID
-$fetch_user_by_id = "SELECT `username` FROM `users` WHERE `id`=:id";
+$fetch_user_by_id = "SELECT `id`,'username' FROM `users` WHERE `username`=:username";
 $query_stmt = $conn->prepare($fetch_user_by_id);
-$query_stmt->bindValue(':id', $id,PDO::PARAM_INT);
+$query_stmt->bindValue(':username', $username,PDO::PARAM_STR);
 $query_stmt->execute();
 $query_stmt->rowCount();
-$row = $query_stmt->fetch(PDO::FETCH_ASSOC);;
-$username = $row['username'];
+$row = $query_stmt->fetch(PDO::FETCH_ASSOC);
+$userID = $row['id'];
+echo json_encode($userID);
 
-echo json_encode($username);
 ?>

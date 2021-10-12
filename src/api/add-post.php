@@ -9,6 +9,9 @@ require __DIR__.'/classes/Database.php';
 
 $response = array();
 
+$postComment = json_decode(file_get_contents("php://input"));
+$username = json_decode(file_get_contents("php://input"));
+
 $postComment = $_POST["comment"];
 $username = $_POST["username"];
 

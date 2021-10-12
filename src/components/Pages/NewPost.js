@@ -50,6 +50,8 @@ const NewPost = () => {
                 .then((response) => {
                     // handle success
                     console.log(response);
+                    setSelectedImage();
+                    handleClose()
                 })
                 .catch((response) => {
                     //handle error
