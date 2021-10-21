@@ -30,7 +30,7 @@ Not implemented yet:
 - Only placeholder on images
 - Personal Feed doesn't show personal photos
 - Personal feed picture open not implemented
-- Can't use bio / username / passowrd
+- Can't change bio / username / password
 - Password reset
 ````
 
@@ -39,7 +39,7 @@ Not implemented yet:
 #### 📂  less_webapp
 ```
 - public
-    Folders after run NPM buil
+    Folders after run NPM build
 ```
 
 #### src
